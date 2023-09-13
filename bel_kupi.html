@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Транспорт в Белгородской области</title>
+	<meta name="description" content="Транспорт - выбирайте самые удачные предложения в Белгороде и Белгородской области, объявления, цены, телефоны и адреса" />
+	<meta name="keywords" content="Транспорт, Белгородская область" />
+	<link rel="preconnect" href="//google-analytics.com" />
+	<link rel="preconnect" href="//mc.yandex.ru" />
+	<link rel="stylesheet" href="https://kupiprodai.ru/styles/style.css?12092023" type="text/css" />
+	<link rel="stylesheet" href="https://kupiprodai.ru/styles/jquery-ui.min.css" type="text/css" />
+	<link rel="icon" href="https://bel.kupiprodai.ru/favicon-120x120.png" sizes="120x120" type="image/png">
+	<link rel="icon" href="https://bel.kupiprodai.ru/favicon-32x32.png" sizes="32x32" type="image/png">
+	<link rel="shortcut icon" href="https://bel.kupiprodai.ru/favicon.ico" type="image/x-icon" />
+	<link rel="yandex-tableau-widget" href="https://bel.kupiprodai.ru/yandex-tableau-manifest.json" />
+		<script src="https://kupiprodai.ru/js/jquery-1.8.2.min.js"></script>
+	<script src="https://kupiprodai.ru/js/jquery-ui.min.js"></script>
+	<script src="https://kupiprodai.ru/js/intersection-observe.polyfill.js?12092023"></script>
+	<script src="https://kupiprodai.ru/js/lazyLoad.js?12092023"></script>
+	<script src="https://kupiprodai.ru/js/params_data.js?12092023"></script>
+	<script src="https://kupiprodai.ru/js/params_core.js?12092023"></script>
+	<script src="https://kupiprodai.ru/js/metro_array.js?12092023"></script>
+	<script src="https://kupiprodai.ru/js/metro_core.js?12092023"></script>
+</head>
+<body>
+<script>
+    $(function() {
+        img_add_like = "https://kupiprodai.ru/images/flag_off.svg";
+        img_remove_like = "https://kupiprodai.ru/images/flag_on.svg";
+        add_like_text = "Разместить здесь";
+        remove_like_text = "Размещено";
+        bbslike_id = "";
+        vip_site = "https://vip.kupiprodai.ru";
+        site = "https://kupiprodai.ru";
+        favorite_image_on = "https://kupiprodai.ru/images/heart_on.svg";
+        favorite_image_off = "https://kupiprodai.ru/images/heart_off.svg";
+    });
+</script>
+
+<div class="width100 container box-sizing">
+	<div class="width100 topline">
+	<div class="center1200 box-sizing">
+		<h1 class="topline_left">Транспорт в Белгородской области</h1>
+		
+		<a class="topline_right topline_user" href="https://kupiprodai.ru/login/">Войти </a>		<a class="topline_right topline_add" href="https://vip.kupiprodai.ru/register/">Подать объявление</a>
+		<a class="topline_right topline_fav" href="https://kupiprodai.ru/favorite/go/">Избранное <sup class="favorites_all"></sup></a>
+	</div>		
+</div>
+	
+	<div class="width100">
+		<div class="center1200 box-sizing">
+			<div class="width100 top">
+				<a href="https://kupiprodai.ru/"><img class="logo" src="https://kupiprodai.ru/images/logo.svg" width="214" height="42" alt="" title="" /></a>
+								<div class="region_current">
+					<br>
+					<a href="https://bel.kupiprodai.ru/">Белгородская область</a>
+				</div>
+																												<a class="add box-sizing" href="https://vip.kupiprodai.ru/register/">Подать объявление</a>
+			</div>
+		
+			
+			<script>
+$(function() {
+	$.ajaxSetup({
+		xhrFields: { withCredentials: true }
+	});
+	$("#searchword").autocomplete({
+		source: "https://vip.kupiprodai.ru/api/getsearchhints/?params="+ btoa($("input[name='cityid']").val()+':'+$("#metro_id").val()+':'+$("input[name='personal']").val()+':'+$("input[name='search_price_from']").val()+':'+$("input[name='search_price_to']").val()),
+		minLength: 0,
+		select: function( event, ui ) {
+			if (ui.item.sUrl != '') location.href = ui.item.sUrl;
+			else $("#searchword").val(ui.item.sLabel);
+			return false;
+		}
+	}).autocomplete( "instance" )._renderItem = function( ul, item ) {
+		var text = "<div>" + item.sLabel;
+		if (item.mLabel != '') text += "<span>" + item.mLabel + "</span>";
+		text += '</div>';
+		return $( "<li>" )
+				.append( text )
+				.appendTo( ul );
+	};
+	$("#searchword").click(function() {
+		if ($(this).val().length == 0) {
+			$(this).autocomplete("search");
+		}
+	});
+
+    $("#citysel").autocomplete({
+      source: "/getcitys.php",
+      minLength: 0,
+      autoFocus: true,
+      select: function(event, ui) {
+        if (ui.item.id == -1000) window.location.href = "https://kupiprodai.ru/russia/";
+        $("input[name='cityid']").val(ui.item.id);
+		  show_metro(ui.item.id);      }
+    });
+    $("#citysel").autocomplete("disable");
+    $("#citysel").click(function() {
+        $("#citysel").autocomplete("enable");
+        $(this).val("");
+        if ($(this).val().length == 0) {
+            $(this).autocomplete("search");
+        }
+    });
+
+	show_metro(0,0);});
+</script>
+
+<div class="width100 head">
+<form method="post" action="https://kupiprodai.ru/search/">
+	<div class="width100 search">
+		<div class="search_round box-sizing">
+			<select class="search_cat box-sizing" name="cat_id" id="cat_id">
+				<option value="">Во всех категориях</option>
+								<option class="search_cat_title" selected value="1_0">Транспорт</option>
+										<option  value="1_3">&nbsp;&nbsp;Мотоциклы и мототехника</option>
+										<option  value="1_2">&nbsp;&nbsp;Грузовики и спецтехника</option>
+										<option  value="1_4">&nbsp;&nbsp;Автомобили</option>
+										<option  value="1_5">&nbsp;&nbsp;Водный транспорт</option>
+										<option  value="1_6">&nbsp;&nbsp;Запчасти и аксессуары</option>
+										<option  value="1_7">&nbsp;&nbsp;Грузоперевозки</option>
+										<option  value="1_8">&nbsp;&nbsp;Другое</option>
+													<option class="search_cat_title"  value="9_0">Недвижимость</option>
+										<option  value="9_117">&nbsp;&nbsp;Квартиры</option>
+										<option  value="9_118">&nbsp;&nbsp;Дома, дачи, коттеджи</option>
+										<option  value="9_119">&nbsp;&nbsp;Комнаты</option>
+										<option  value="9_120">&nbsp;&nbsp;Коммерческая</option>
+										<option  value="9_121">&nbsp;&nbsp;Земельные участки</option>
+										<option  value="9_122">&nbsp;&nbsp;Гаражи и машиноместа</option>
+										<option  value="9_123">&nbsp;&nbsp;Недвижимость за рубежом</option>
+													<option class="search_cat_title"  value="16_0">Личные вещи</option>
+										<option  value="16_141">&nbsp;&nbsp;Женская одежда, обувь</option>
+										<option  value="16_142">&nbsp;&nbsp;Мужская одежда, обувь</option>
+										<option  value="16_144">&nbsp;&nbsp;Детский мир</option>
+										<option  value="16_145">&nbsp;&nbsp;Красота и здоровье</option>
+										<option  value="16_146">&nbsp;&nbsp;Аксессуары</option>
+													<option class="search_cat_title"  value="19_0">Электроника, техника</option>
+										<option  value="19_20">&nbsp;&nbsp;Электроника</option>
+										<option  value="19_12">&nbsp;&nbsp;Техника для дома</option>
+										<option  value="19_150">&nbsp;&nbsp;Техника для кухни</option>
+										<option  value="19_151">&nbsp;&nbsp;Климатическая техника</option>
+										<option  value="19_153">&nbsp;&nbsp;Личное и гигиена</option>
+													<option class="search_cat_title"  value="27_0">Дом и сад, мебель, бытовое</option>
+										<option  value="27_15">&nbsp;&nbsp;Мебель</option>
+										<option  value="27_125">&nbsp;&nbsp;Интерьер</option>
+										<option  value="27_126">&nbsp;&nbsp;Посуда, все для кухни</option>
+										<option  value="27_127">&nbsp;&nbsp;Освещение</option>
+										<option  value="27_128">&nbsp;&nbsp;Бытовая химия</option>
+										<option  value="27_129">&nbsp;&nbsp;Сад и огород</option>
+													<option class="search_cat_title"  value="31_0">Текстиль</option>
+										<option  value="31_68">&nbsp;&nbsp;Ткани</option>
+										<option  value="31_70">&nbsp;&nbsp;КПБ, полотенца, скатерти</option>
+										<option  value="31_71">&nbsp;&nbsp;Рабочая одежда</option>
+										<option  value="31_74">&nbsp;&nbsp;Другое</option>
+													<option class="search_cat_title"  value="42_0">Животные</option>
+										<option  value="42_130">&nbsp;&nbsp;Собаки</option>
+										<option  value="42_131">&nbsp;&nbsp;Кошки</option>
+										<option  value="42_132">&nbsp;&nbsp;Аквариум</option>
+										<option  value="42_133">&nbsp;&nbsp;Птицы</option>
+										<option  value="42_134">&nbsp;&nbsp;Товары и услуги для животных</option>
+										<option  value="42_135">&nbsp;&nbsp;Другие животные</option>
+													<option class="search_cat_title"  value="51_0">Услуги и предложения</option>
+										<option  value="51_81">&nbsp;&nbsp;Юридические услуги</option>
+										<option  value="51_82">&nbsp;&nbsp;Бухгалтерские услуги</option>
+										<option  value="51_83">&nbsp;&nbsp;Ремонт техники</option>
+										<option  value="51_84">&nbsp;&nbsp;IT</option>
+										<option  value="51_85">&nbsp;&nbsp;Безопасность, детективы</option>
+										<option  value="51_86">&nbsp;&nbsp;Образование, курсы</option>
+										<option  value="51_87">&nbsp;&nbsp;Переводы, Набор текста</option>
+										<option  value="51_88">&nbsp;&nbsp;Развлечение, Праздники</option>
+										<option  value="51_89">&nbsp;&nbsp;Другие виды услуг</option>
+													<option class="search_cat_title"  value="59_0">Работа</option>
+										<option  value="59_137">&nbsp;&nbsp;Вакансии</option>
+										<option  value="59_138">&nbsp;&nbsp;Резюме</option>
+													<option class="search_cat_title"  value="75_0">Хобби, Отдых, Спорт</option>
+										<option  value="75_76">&nbsp;&nbsp;Билеты и путешествия</option>
+										<option  value="75_77">&nbsp;&nbsp;Спорт, Активный отдых</option>
+										<option  value="75_78">&nbsp;&nbsp;Книги и журналы</option>
+										<option  value="75_79">&nbsp;&nbsp;Коллекции</option>
+										<option  value="75_80">&nbsp;&nbsp;Музыкальные инструменты</option>
+													<option class="search_cat_title"  value="331_0">Оборудование</option>
+										<option  value="331_33">&nbsp;&nbsp;Газовое, топливное</option>
+										<option  value="331_34">&nbsp;&nbsp;Деревообрабатывающее</option>
+										<option  value="331_35">&nbsp;&nbsp;Железнодорожное</option>
+										<option  value="331_36">&nbsp;&nbsp;Инструменты</option>
+										<option  value="331_37">&nbsp;&nbsp;Пищевое, с/х</option>
+										<option  value="331_38">&nbsp;&nbsp;Станки</option>
+										<option  value="331_39">&nbsp;&nbsp;Торговое</option>
+										<option  value="331_40">&nbsp;&nbsp;Электротехническое</option>
+										<option  value="331_41">&nbsp;&nbsp;Другое</option>
+													<option class="search_cat_title"  value="342_0">Сырье</option>
+										<option  value="342_43">&nbsp;&nbsp;Пиломатериалы</option>
+										<option  value="342_44">&nbsp;&nbsp;Металлы</option>
+										<option  value="342_45">&nbsp;&nbsp;Нефть, газ, топливо</option>
+										<option  value="342_46">&nbsp;&nbsp;Химия</option>
+										<option  value="342_48">&nbsp;&nbsp;Бумага, тара, упаковка</option>
+										<option  value="342_50">&nbsp;&nbsp;Другое</option>
+													<option class="search_cat_title"  value="351_0">Строительные товары и услуги</option>
+										<option  value="351_52">&nbsp;&nbsp;Конструкции</option>
+										<option  value="351_53">&nbsp;&nbsp;Материалы</option>
+										<option  value="351_54">&nbsp;&nbsp;Сантехника</option>
+										<option  value="351_55">&nbsp;&nbsp;Механизмы</option>
+										<option  value="351_57">&nbsp;&nbsp;Производство работ</option>
+										<option  value="351_58">&nbsp;&nbsp;Другое</option>
+													<option class="search_cat_title"  value="359_0">Продукты питания</option>
+										<option  value="359_60">&nbsp;&nbsp;Зерно, крупы</option>
+										<option  value="359_61">&nbsp;&nbsp;Кондитерские изделия</option>
+										<option  value="359_62">&nbsp;&nbsp;Консервы</option>
+										<option  value="359_63">&nbsp;&nbsp;Мясо, колбасы</option>
+										<option  value="359_64">&nbsp;&nbsp;Рыба, морепродукты</option>
+										<option  value="359_65">&nbsp;&nbsp;Соки, воды</option>
+										<option  value="359_66">&nbsp;&nbsp;Другие продукты</option>
+												</select>
+		</div>
+		<div class="box-sizing">
+			<input class="search_form box-sizing" id="searchword" type="text" size="25" name='searching' value="" />
+		</div>
+		<div class="box-sizing">
+			<input class="search_city box-sizing" type="text" name="city" id="citysel" value="Белгородская область" />
+		</div>
+		<input type="hidden" name="personal" value="-1">
+		<input type="hidden" id="cityid" name="cityid" value="-11" />
+		<input class="search_button" type="submit" id="searchSub" value="Найти">
+	</div>
+
+	<fieldset class="width100 dop_search box-sizing" id="params" style="display:none">
+				
+					<input placeholder="Цена: от" type="text" size="10" name="search_price_from" value="" />
+			<input placeholder="Цена: до" type="text" size="10" name="search_price_to" value="" />
+				<div class="metro" style="display:none" id="metrodiv">
+			<select id="metro_id" name="metro_id"></select>
+		</div>
+	</fieldset>
+			
+	
+	</form>
+</div>
+			
+			<div class="width100 nav box-sizing line_grey margin_bottom_25">
+									<a href="https://bel.kupiprodai.ru/">Объявления Белгородская область</a> &middot; <a title="Транспорт" href="https://bel.kupiprodai.ru/auto/">Транспорт</a>							</div>
+
+			<div class="width100 content margin_bottom_50">
+				<div class="content_right">
+					<div class="width100 margin_bottom_50">
+										<!-- Yandex.RTB R-A-136546-2 -->
+					<div id="yandex_rtb_R-A-136546-2"></div>
+					<script type="text/javascript">
+						(function(w, d, n, s, t) {
+							w[n] = w[n] || [];
+							w[n].push(function() {
+								Ya.Context.AdvManager.render({
+									blockId: "R-A-136546-2",
+									renderTo: "yandex_rtb_R-A-136546-2",
+									async: true,
+									onRender: function (data) {
+										document.getElementById("blockCenterText1").style.display = 'block';
+										document.getElementById("blockCenterText2").style.display = 'block';
+									}
+								},
+									function () {
+										document.getElementById("blockCenterText1").style.display = 'block';
+										document.getElementById("blockCenterText2").style.display = 'block';
+									}
+								);
+							});
+							t = d.getElementsByTagName("script")[0];
+							s = d.createElement("script");
+							s.type = "text/javascript";
+							s.src = "//an.yandex.ru/system/context.js";
+							s.async = true;
+							t.parentNode.insertBefore(s, t);
+						})(this, this.document, "yandexContextAsyncCallbacks");
+					</script>
+
+										<a class="banner_kupi width100 box-sizing hideit" id="blockCenterText1" href="https://vip.kupiprodai.ru/info/partner/">
+						<p>Советуйте <span>Купи</span>Продай друзьям и получайте свой доход!</p>
+						<small>Узнать подробнее</small>
+					</a>
+					</div>
+
+					<div class="width100 center_text margin_bottom_25 hideit" id="blockCenterText2">
+						<a target="_blank" href="https://play.google.com/store/apps/details?id=ru.kupiprodai.androidmobile"><img class="margin_bottom_10" src="https://kupiprodai.ru/images/google_play_badge.png" width="120" height="36" alt="Google Play Маркет" title="Google Play Маркет" /></a><br>
+						<a target="_blank" href="https://itunes.apple.com/ru/app/id1370428314"><img src="https://kupiprodai.ru/images/app_store_badge.png" width="120" height="40" alt="App Store" title="App Store" /></a>
+					</div>
+				</div>
+				
+				<div class="content_layout">
+					<div class="content_left">
+										
+												<div class="width100 podcat margin_bottom_25 box-sizing">
+														<a href="https://bel.kupiprodai.ru/auto/all_gruzoviki/">Грузовики и спецтехника</a>
+														<a href="https://bel.kupiprodai.ru/auto/all_cars/">Автомобили</a>
+														<a href="https://bel.kupiprodai.ru/auto/all_lodki/">Водный транспорт</a>
+														<a href="https://bel.kupiprodai.ru/auto/all_zapchasti/">Запчасти и аксессуары</a>
+														<a href="https://bel.kupiprodai.ru/auto/all_gruz/">Грузоперевозки</a>
+														<a href="https://bel.kupiprodai.ru/auto/all_autoraznoe/">Другое</a>
+														<a href="https://bel.kupiprodai.ru/auto/all_mototehnika/">Мотоциклы и мототехника</a>
+													</div>
+						
+						<div class="width100 margin_bottom_10">
+							<div class="msgs_filter">
+								<span class="msgs_filter_act"><a href="https://bel.kupiprodai.ru/auto/">Все</a></span>
+								<span ><a href="https://bel.kupiprodai.ru/auto/?personal=0">Частные</a></span>
+								<span ><a href="https://bel.kupiprodai.ru/auto/?personal=1">Компании</a></span>
+							</div>
+							<div class="msgs_view">
+								<a class="msgs_view_gallery" href="https://bel.kupiprodai.ru/view/gallery/" title="Галерея"></a>
+								<a class="msgs_view_list_act" onclick="return false;" href="https://bel.kupiprodai.ru/view/list/" title="Список"></a>
+							</div>
+						</div>
+				
+													
+															<ul class="width100 list margin_bottom_20" id="cat">
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/tomarovka_gruzoviki_pricep_traktornyy_mazhara_8478926"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Прицеп тракторный мажара" data-src="https://img02.kupiprodai.ru/092023/1694310325590.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Сломана правая тяга колеса смотреть фото">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/tomarovka_gruzoviki_pricep_traktornyy_mazhara_8478926">Прицеп тракторный мажара</a>
+				<p class="list_text">
+															Вид техники: Прицепы;&nbsp;
+														</p>
+				<span class="list_price">50 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Томаровка</span>
+                <span class="list_data">
+										Сегодня,
+					14:01
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="8478926" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="8478926"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_zapchasti_prodam_dvigatel_yamz_238_8242243"><img class="list_photo" src="https://kupiprodai.ru/images/nophoto.svg" width="175" height="125" title="Продам двигатель ЯМЗ 238" alt=""></a>
+    
+    <div class="list_layout_padd" title="Двигатель ЯМЗ 238 б/у в рабочем состоянии">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_zapchasti_prodam_dvigatel_yamz_238_8242243">Продам двигатель ЯМЗ 238</a>
+				<p class="list_text">
+										Двигатель ЯМЗ 238 б/у в рабочем состоянии
+									</p>
+				<span class="list_price">100 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					13:35
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="8242243" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="8242243"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_uslugi_gruzchikov_6300543"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Услуги грузчиков" data-src="https://img02.kupiprodai.ru/062021/1624025102756.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Полный спектр услуг погрузо-разгрузочных работ любых сложностей и любого объема, подбор машины, - Переезды офисные и...">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_uslugi_gruzchikov_6300543">Услуги грузчиков</a>
+				<p class="list_text">
+										Полный спектр услуг погрузо-разгрузочных работ любых сложностей и любого объема, подбор машины, - Переезды офисные и...
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					12:22
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="6300543" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="6300543"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_pomosch_pri_pereezde_5755852"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Помощь при переезде" data-src="https://img02.kupiprodai.ru/012021/1610266997744.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Погрузка и разгрузка, спуск и подъем: мебели, вещей, посуды, бытовой техники, торгового оборудования, строительных...">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_pomosch_pri_pereezde_5755852">Помощь при переезде</a>
+				<p class="list_text">
+										Погрузка и разгрузка, спуск и подъем: мебели, вещей, посуды, бытовой техники, торгового оборудования, строительных...
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					12:22
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5755852" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5755852"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_autoraznoe_avtoshampun_7655507"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Автошампунь" data-src="https://img02.kupiprodai.ru/022023/1676382618322.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Автошампунь премиум класса RAIN AVTO. 20л/24кг.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_autoraznoe_avtoshampun_7655507">Автошампунь</a>
+				<p class="list_text">
+										Автошампунь премиум класса RAIN AVTO. 20л/24кг.
+									</p>
+				<span class="list_price">3 500 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					10:42
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="7655507" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="7655507"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_pereezdygruzchiki_89517632158_5756319"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Переезды.ГРУЗЧИКИ 8-951-763-21-58" data-src="https://img02.kupiprodai.ru/012021/1610279717417.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Переезды.Грузоперевозки.вывоз мусора.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_pereezdygruzchiki_89517632158_5756319">Переезды.ГРУЗЧИКИ 8-951-763-21-58</a>
+				<p class="list_text">
+										Переезды.Грузоперевозки.вывоз мусора.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					09:36
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5756319" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5756319"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_grabli_DPol_gvn5_2023_7979169"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грабли D-Pol ГВН-5, 2023" data-src="https://img02.kupiprodai.ru/052023/1683046222700.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Описание
+
+— Рабочая ширина, м: 3
+— Ширина ворошения, м: 3,2
+— Ширина сгребания, м: 2,9
+— Диаметр колес, м: 1,49...">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_grabli_DPol_gvn5_2023_7979169">Грабли D-Pol ГВН-5, 2023</a>
+				<p class="list_text">
+															Вид техники: Сельхозтехника;&nbsp;
+														</p>
+				<span class="list_price">45 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					09:29
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="7979169" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="7979169"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_traktor_skaut_TC1304C_2023_8017201"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Трактор СКАУТ TC-1304C, 2023" data-src="https://img02.kupiprodai.ru/052023/1684403193742.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Описание
+ ПРОГРАММА РОСАГРОЛИЗИНГ, агросезон без платежей.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_traktor_skaut_TC1304C_2023_8017201">Трактор СКАУТ TC-1304C, 2023</a>
+				<p class="list_text">
+															Вид техники: Сельхозтехника;&nbsp;
+														</p>
+				<span class="list_price">4 100 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					09:29
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="8017201" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="8017201"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_zernoochistitel_voronezhagrotehservis_ovs25_2023_8016811"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Зерноочиститель ВоронежАгроТехСервис ОВС-25, 2023" data-src="https://img02.kupiprodai.ru/052023/1684391261225.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Описание
+Высота, мм: 3310
+Содержание соломистой примеси, не более, %: 0,2
+Скорость движения при первичной очистке, м/ч: 3...">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_zernoochistitel_voronezhagrotehservis_ovs25_2023_8016811">Зерноочиститель ВоронежАгроТехСервис ОВС-25, 2023</a>
+				<p class="list_text">
+															Вид техники: Сельхозтехника;&nbsp;
+														</p>
+				<span class="list_price">750 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					09:28
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="8016811" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="8016811"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_opryskivatel_250022m2023_7966617"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Опрыскиватель 2500/22м,2023" data-src="https://img02.kupiprodai.ru/042023/1682595764977.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Опрыскиватель СД-Агро Шины: 9х32
+Рабочая скорость, км/ч: 12
+Габаритные размеры: длина, мм: 5250
+Габаритные размеры...">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_opryskivatel_250022m2023_7966617">Опрыскиватель 2500/22м,2023</a>
+				<p class="list_text">
+															Вид техники: Сельхозтехника;&nbsp;
+														</p>
+				<span class="list_price">850 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					09:28
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="7966617" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="7966617"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_borona_Tolmet_Megatron_2023_8016803"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Борона Tolmet Megatron, 2023" data-src="https://img02.kupiprodai.ru/052023/1684391039379.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Борона дисковая мегатрон
+
+Tolmet MEGATRON предназначена для предпосевной обработки почвы после плуга и другой обработки...">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_borona_Tolmet_Megatron_2023_8016803">Борона Tolmet Megatron, 2023</a>
+				<p class="list_text">
+															Вид техники: Сельхозтехника;&nbsp;
+														</p>
+				<span class="list_price">3 150 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					09:28
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="8016803" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="8016803"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_kultivator_sdagro_kpu__4_s_kant_7966596"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Культиватор СД-Агро КПУ - 4 С Кант" data-src="https://img02.kupiprodai.ru/042023/1682595417260.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Культиватор СД-Агро кпм Евро предназначен для сплошной предпосевной и паровой обработки всех типов минеральных почв.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_kultivator_sdagro_kpu__4_s_kant_7966596">Культиватор СД-Агро КПУ - 4 С Кант</a>
+				<p class="list_text">
+															Вид техники: Сельхозтехника;&nbsp;
+														</p>
+				<span class="list_price">550 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					09:28
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="7966596" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="7966596"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_borona_sdagro_akkord_300_2023_7966622"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Борона СД-Агро Аккорд 300, 2023" data-src="https://img02.kupiprodai.ru/042023/1682595931334.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Рабочая ширина: 300 cм
+Количество дисков: 24 шт.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_borona_sdagro_akkord_300_2023_7966622">Борона СД-Агро Аккорд 300, 2023</a>
+				<p class="list_text">
+										Рабочая ширина: 300 cм
+Количество дисков: 24 шт.
+									</p>
+				<span class="list_price">1 150 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					09:28
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="7966622" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="7966622"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_razbrasyvatel_udobreniy_tehnopol_YUKON_30009_2023_7966631"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Разбрасыватель удобрений Технополь YUKON 3000,9, 2023" data-src="https://img02.kupiprodai.ru/042023/1682596129871.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Ещё одна влагосберигающая разработка от «ВК Технополь» - агрегат для внесения минеральных удобрений инъекционным способом...">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_razbrasyvatel_udobreniy_tehnopol_YUKON_30009_2023_7966631">Разбрасыватель удобрений Технополь YUKON 3000,9, 2023</a>
+				<p class="list_text">
+															Вид техники: Сельхозтехника;&nbsp;
+														</p>
+				<span class="list_price">7 500 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					09:27
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="7966631" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="7966631"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_seyalka_Demetra_spm8_2023_7966635"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Сеялка Demetra СПМ-8, 2023" data-src="https://img02.kupiprodai.ru/042023/1682596339897.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Сеялка СД-Агро СПМ Деметра Предназначена для точного высева калиброванных семян кукурузы, подсолнечника, клещевины, сои, а...">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_seyalka_Demetra_spm8_2023_7966635">Сеялка Demetra СПМ-8, 2023</a>
+				<p class="list_text">
+															Вид техники: Сельхозтехника;&nbsp;
+														</p>
+				<span class="list_price">780 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					09:27
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="7966635" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="7966635"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_kultivator_propashnoy_kpn56_s_sistemoy_vneseniya_udobreniy_s_transportnym_8219063"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="КУЛЬТИВАТОР ПРОПАШНОЙ КПН-5,6 С СИСТЕМОЙ ВНЕСЕНИЯ УДОБРЕНИЙ с транспортным" data-src="https://img02.kupiprodai.ru/082023/1692105501210.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Культиватор навесной КПН-5,6 
+предназначен для междурядной обработки посевов кукурузы, подсолнечника, клещевины и других...">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_kultivator_propashnoy_kpn56_s_sistemoy_vneseniya_udobreniy_s_transportnym_8219063">КУЛЬТИВАТОР ПРОПАШНОЙ КПН-5,6 С СИСТЕМОЙ ВНЕСЕНИЯ УДОБРЕНИЙ с транспортным</a>
+				<p class="list_text">
+															Вид техники: Сельхозтехника;&nbsp;
+														</p>
+				<span class="list_price">480 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					09:26
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="8219063" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="8219063"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+			<li><div id="yandex_rtb_R-A-136546-15-1"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-136546-15",
+                renderTo: "yandex_rtb_R-A-136546-15-1",
+                async: true
+           },
+           function () {
+document.getElementById("yandex_rtb_R-A-136546-15-1").innerHTML = "<div class='rlist'><a href='https://play.google.com/store/apps/details?id=ru.kupiprodai.androidmobile'><img src='https://kupiprodai.ru/images/logo_icon.gif' width='80' height='80' alt='' /></a><div><p><a class='line_title' href='https://play.google.com/store/apps/details?id=ru.kupiprodai.androidmobile'>КупиПродай для Android</a></p><a class='rlist_link' href='https://play.google.com/store/apps/details?id=ru.kupiprodai.androidmobile'>Загрузить</a></div></div>";
+}
+           );
+       });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script></li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_seyalka_Demetra_szd540V_8160536"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Сеялка Demetra СЗД-540V," data-src="https://img02.kupiprodai.ru/072023/1689849619851.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Сеялка Зернотуковая СЗД-540V (Вариаторная). В наличии. Надежная техника. Гарантия 1 год. Сервисное обслуживания.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_seyalka_Demetra_szd540V_8160536">Сеялка Demetra СЗД-540V,</a>
+				<p class="list_text">
+															Вид техники: Сельхозтехника;&nbsp;
+														</p>
+				<span class="list_price">1 850 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					09:26
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="8160536" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="8160536"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_24ch89511539975_2867187"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики 24ч.8-951-153-99-75" data-src="https://img02.kupiprodai.ru/112018/1550496953969.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Переезды:Квартирные,офисные,складские,магазинные,дачные.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_24ch89511539975_2867187">Грузчики 24ч.8-951-153-99-75</a>
+				<p class="list_text">
+										Переезды:Квартирные,офисные,складские,магазинные,дачные.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					09:22
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="2867187" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="2867187"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/staryyoskol_gruz_gruzoperevozkipereezdy_na_gazeli_po_gorodu_i_rf_4826430"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузоперевозки-Переезды на Газели по городу и РФ" data-src="https://img02.kupiprodai.ru/042020/1586545766309.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Грузоперевозки-переезды на Газели тент длинной 4.20 метра по Старому Осколу-району и России.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/staryyoskol_gruz_gruzoperevozkipereezdy_na_gazeli_po_gorodu_i_rf_4826430">Грузоперевозки-Переезды на Газели по городу и РФ</a>
+				<p class="list_text">
+										Грузоперевозки-переезды на Газели тент длинной 4.20 метра по Старому Осколу-району и России.
+									</p>
+				<span class="list_price">500 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Старый Оскол</span>
+                <span class="list_data">
+										Сегодня,
+					09:19
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="4826430" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="4826430"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_v_belgorode_89517632158_5313451"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики в Белгороде 8-951-763-21-58" data-src="https://img02.kupiprodai.ru/082020/1597474335955.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Услуги опытных грузчиков.Погрузка,разгрузка фур.Переезды.Перевозка пианино.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_v_belgorode_89517632158_5313451">Грузчики в Белгороде 8-951-763-21-58</a>
+				<p class="list_text">
+										Услуги опытных грузчиков.Погрузка,разгрузка фур.Переезды.Перевозка пианино.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					09:18
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5313451" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5313451"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_gruzoperevozki_gazel_89517632158_5315789"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики Грузоперевозки Газель 8-951-763-21-58" data-src="https://img02.kupiprodai.ru/082020/1597578877472.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Услуги Грузчиков.Переезды.Погрузка.Разгрузка.Такелажные работы.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_gruzoperevozki_gazel_89517632158_5315789">Грузчики Грузоперевозки Газель 8-951-763-21-58</a>
+				<p class="list_text">
+										Услуги Грузчиков.Переезды.Погрузка.Разгрузка.Такелажные работы.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					08:37
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5315789" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5315789"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_zapchasti_JR4089074_zubchatyy_mehanizm_CNHNew_HollandCASE_7859263"><img class="list_photo" src="https://kupiprodai.ru/images/nophoto.svg" width="175" height="125" title="JR4089074 Зубчатый механизм CNH(New Holland/CASE)" alt=""></a>
+    
+    <div class="list_layout_padd" title="JR4089074 Зубчатый механизм CNH(New Holland/CASE) Новый в наличии. Торг.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_zapchasti_JR4089074_zubchatyy_mehanizm_CNHNew_HollandCASE_7859263">JR4089074 Зубчатый механизм CNH(New Holland/CASE)</a>
+				<p class="list_text">
+															Вид товара: Другое;&nbsp;
+														</p>
+				<span class="list_price">97 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					08:33
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="7859263" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="7859263"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_zapchasti_JR4089074_zubchatyy_mehanizm_CNHNew_HollandCASE_7813894"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="JR4089074 Зубчатый механизм CNH(New Holland/CASE)" data-src="https://img02.kupiprodai.ru/032023/1678009990980.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="JR4089074 Зубчатый механизм CNH(New Holland/CASE) Новый в наличии. Торг уместен.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_zapchasti_JR4089074_zubchatyy_mehanizm_CNHNew_HollandCASE_7813894">JR4089074 Зубчатый механизм CNH(New Holland/CASE)</a>
+				<p class="list_text">
+															Вид товара: Другое;&nbsp;
+														</p>
+				<span class="list_price">97 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					08:33
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="7813894" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="7813894"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikigazelipogruzkarazgruzka_89517632158_6638162"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики.газели.погрузка-разгрузка 8-951-763-21-58" data-src="https://img02.kupiprodai.ru/122021/1638448347475.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Газели,опытные грузчики.Переезды.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikigazelipogruzkarazgruzka_89517632158_6638162">Грузчики.газели.погрузка-разгрузка 8-951-763-21-58</a>
+				<p class="list_text">
+										Газели,опытные грузчики.Переезды.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					08:17
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="6638162" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="6638162"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikiperevozka_mebeligruzoperevozki_89517632158_5313472"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики.Перевозка мебели.Грузоперевозки 8-951-763-21-58" data-src="https://img02.kupiprodai.ru/082020/1597475300686.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Опытные грузчики.Квартирные,офисные переезды.Вывоз строительного мусора.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikiperevozka_mebeligruzoperevozki_89517632158_5313472">Грузчики.Перевозка мебели.Грузоперевозки 8-951-763-21-58</a>
+				<p class="list_text">
+										Опытные грузчики.Квартирные,офисные переезды.Вывоз строительного мусора.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					08:16
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5313472" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5313472"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikipereezdyvyvoz_musora_89517632158_5333453"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики/Переезды/Вывоз мусора 8-951-763-21-58" data-src="https://img02.kupiprodai.ru/082020/1598103261850.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Услуги грузчиков.переезды.вывоз мусора.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikipereezdyvyvoz_musora_89517632158_5333453">Грузчики/Переезды/Вывоз мусора 8-951-763-21-58</a>
+				<p class="list_text">
+										Услуги грузчиков.переезды.вывоз мусора.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					06:28
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5333453" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5333453"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_belgorodne_dorogo_89517632158_5756315"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики Белгород,не дорого 8-951-763-21-58" data-src="https://img02.kupiprodai.ru/012021/1610279539916.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Грузчики.Газель.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_belgorodne_dorogo_89517632158_5756315">Грузчики Белгород,не дорого 8-951-763-21-58</a>
+				<p class="list_text">
+										Грузчики.Газель.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					06:28
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5756315" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5756315"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikipogruzkirazgruzki_89517632158_5315026"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики.погрузки.разгрузки 8-951-763-21-58" data-src="https://img02.kupiprodai.ru/082020/1597552246626.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Погрузка.Разгрузка.Переезды.Грузчики.Перевозки.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikipogruzkirazgruzki_89517632158_5315026">Грузчики.погрузки.разгрузки 8-951-763-21-58</a>
+				<p class="list_text">
+										Погрузка.Разгрузка.Переезды.Грузчики.Перевозки.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Сегодня,
+					06:28
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5315026" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5315026"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_opytnye_gruzchiki_3283429"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Опытные Грузчики" data-src="https://img02.kupiprodai.ru/042019/1554189334640.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Работаем ежедневно без праздников и выходных.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_opytnye_gruzchiki_3283429">Опытные Грузчики</a>
+				<p class="list_text">
+										Работаем ежедневно без праздников и выходных.
+									</p>
+				<span class="list_price">200 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					20:19
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="3283429" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="3283429"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikipereezdy_1929160"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики,переезды" data-src="https://img02.kupiprodai.ru/012018/1515942023689.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Квартирные,складские,дачные,домашним,офисные и другие переезды.Всегда находимся на связи.Работаем Круглосуточно.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikipereezdy_1929160">Грузчики,переезды</a>
+				<p class="list_text">
+										Квартирные,складские,дачные,домашним,офисные и другие переезды.Всегда находимся на связи.Работаем Круглосуточно.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					20:17
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="1929160" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="1929160"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_pereezdy_1009619"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики, переезды" data-src="https://img02.kupiprodai.ru/012017/1528095768845.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Квартирные,офисные,складские,дачные,магазинные переезды.
+Работы на складах,в помещениях.
+Такелажные работы.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_pereezdy_1009619">Грузчики, переезды</a>
+				<p class="list_text">
+										Квартирные,офисные,складские,дачные,магазинные переезды.
+Работы на складах,в помещениях.
+Такелажные работы.
+									</p>
+				<span class="list_price">300 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					20:13
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="1009619" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="1009619"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_24ch_1849072"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики 24ч" data-src="https://img02.kupiprodai.ru/122017/1573411864959.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="↗️Услуги Грузчиков,г.Белгород.
+↗️Сотрудничаем на постоянной основе. 
+↗️Такелажные работы.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_24ch_1849072">Грузчики 24ч</a>
+				<p class="list_text">
+										↗️Услуги Грузчиков,г.Белгород.
+↗️Сотрудничаем на постоянной основе. 
+↗️Такелажные работы.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					18:34
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="1849072" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="1849072"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_na_chas_pereezdy_gruzoperevozki_89103206068_3169256"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики на час Переезды Грузоперевозки 8-910-320-60-68" data-src="https://img02.kupiprodai.ru/022019/1687093001708.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Грузчики, Газель, Грузоперевозки. Квартирные, офисные переезды. Разгрузка, погрузка. Доставка мебели, вещей, стройматериалов.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_na_chas_pereezdy_gruzoperevozki_89103206068_3169256">Грузчики на час Переезды Грузоперевозки 8-910-320-60-68</a>
+				<p class="list_text">
+										Грузчики, Газель, Грузоперевозки. Квартирные, офисные переезды. Разгрузка, погрузка. Доставка мебели, вещей, стройматериалов.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					15:35
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="3169256" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="3169256"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_na_chas__89103206068_3160029"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики на час  89103206068" data-src="https://img02.kupiprodai.ru/022019/1690212952271.gif" alt=""></a>
+    
+    <div class="list_layout_padd" title="Опытные грузчики. Газели
+грузоперевозки недорого..
+-перевозка мебели.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_na_chas__89103206068_3160029">Грузчики на час  89103206068</a>
+				<p class="list_text">
+										Опытные грузчики. Газели
+грузоперевозки недорого..
+-перевозка мебели.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					15:35
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="3160029" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="3160029"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_takelazhniki_vygruzka_zagruzka_89103206068_3553490"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики Такелажники Выгрузка, загрузка 8-910-320-60-68" data-src="https://img02.kupiprodai.ru/062019/1693419350127.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Опытные грузчики
+Выгрузка, загрузка любых грузов:
+(товар, мебель, личные вещи, стройматериалы, оборудование
+Подъем на...">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_takelazhniki_vygruzka_zagruzka_89103206068_3553490">Грузчики Такелажники Выгрузка, загрузка 8-910-320-60-68</a>
+				<p class="list_text">
+										Опытные грузчики
+Выгрузка, загрузка любых грузов:
+(товар, мебель, личные вещи, стройматериалы, оборудование
+Подъем на...
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					15:30
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="3553490" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="3553490"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikipogruzkarazgruzka_belgorod_89517632158_5919033"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики.погрузка-разгрузка Белгород 8-951-763-21-58" data-src="https://img02.kupiprodai.ru/032021/1614603330830.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Перевозка мебели,вещей.Опытные грузчики.Грузоперевозки.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikipogruzkarazgruzka_belgorod_89517632158_5919033">Грузчики.погрузка-разгрузка Белгород 8-951-763-21-58</a>
+				<p class="list_text">
+										Перевозка мебели,вещей.Опытные грузчики.Грузоперевозки.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					12:24
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5919033" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5919033"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzoperevozki_i_gruzchiki_89517632158_5327491"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузоперевозки и Грузчики 8-951-763-21-58" data-src="https://img02.kupiprodai.ru/082020/1597925440830.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Грузоперевозки+Опытные грузчики.Переезды.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzoperevozki_i_gruzchiki_89517632158_5327491">Грузоперевозки и Грузчики 8-951-763-21-58</a>
+				<p class="list_text">
+										Грузоперевозки+Опытные грузчики.Переезды.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					12:24
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5327491" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5327491"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_89517632158_perevozka_pianino_5388867"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики 8-951-763-21-58 Перевозка пианино" data-src="https://img02.kupiprodai.ru/092020/1599286561115.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Перевозка пианино,сейфов.Грузоперевозки">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki_89517632158_perevozka_pianino_5388867">Грузчики 8-951-763-21-58 Перевозка пианино</a>
+				<p class="list_text">
+										Перевозка пианино,сейфов.Грузоперевозки
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					12:24
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5388867" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5388867"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_zapchasti_originalnyy_zavodskoy_chehol_Mazda_3_6689552"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Оригинальный заводской чехол Mazda 3" data-src="https://img02.kupiprodai.ru/122021/1640765706601.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Чехлы  EMC ELEGANT на задние сиденья для Mazda 3, новые, в упаковке.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_zapchasti_originalnyy_zavodskoy_chehol_Mazda_3_6689552">Оригинальный заводской чехол Mazda 3</a>
+				<p class="list_text">
+															Вид товара: Экипировка;&nbsp;
+														</p>
+				<span class="list_price">1 500 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					11:52
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="6689552" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="6689552"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/staryyoskol_gruz_perevozki_malogaboritnye_gruzov_8081853"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Перевозки малогаборитные грузов" data-src="https://img02.kupiprodai.ru/062023/1686925098104.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Перевезу груз по городу, областям, Р/Ф на автомобиле W CADDY. По городу от 500 р/ час. Меж город 30р/км Длинна 1.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/staryyoskol_gruz_perevozki_malogaboritnye_gruzov_8081853">Перевозки малогаборитные грузов</a>
+				<p class="list_text">
+										Перевезу груз по городу, областям, Р/Ф на автомобиле W CADDY. По городу от 500 р/ час. Меж город 30р/км Длинна 1.
+									</p>
+				<span class="list_price">500 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Старый Оскол</span>
+                <span class="list_data">
+										Вчера,
+					09:36
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="8081853" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="8081853"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/staryyoskol_gruz_gruzoperevozki_gruzchiki_vyvoz_musora_6695892"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузоперевозки, грузчики, вывоз мусора," data-src="https://img02.kupiprodai.ru/012022/1687704584284.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Грузоперевозки, грузчики, вывоз мусора.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/staryyoskol_gruz_gruzoperevozki_gruzchiki_vyvoz_musora_6695892">Грузоперевозки, грузчики, вывоз мусора,</a>
+				<p class="list_text">
+										Грузоперевозки, грузчики, вывоз мусора.
+									</p>
+				<span class="list_price">500 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Старый Оскол</span>
+                <span class="list_data">
+										Вчера,
+					09:35
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="6695892" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="6695892"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_uslugi_opytnyh_gruzchikovpereezdy_89517632158_5315397"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Услуги Опытных Грузчиков.Переезды 8-951-763-21-58" data-src="https://img02.kupiprodai.ru/082020/1597561675783.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Квартирные.Офисные переезды.Вывоз мусора.Подъём стройматериалов на этаж.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_uslugi_opytnyh_gruzchikovpereezdy_89517632158_5315397">Услуги Опытных Грузчиков.Переезды 8-951-763-21-58</a>
+				<p class="list_text">
+										Квартирные.Офисные переезды.Вывоз мусора.Подъём стройматериалов на этаж.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					06:50
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5315397" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5315397"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki89517632158_5886252"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики.8-951-763-21-58" data-src="https://img02.kupiprodai.ru/022021/1613312730533.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Грузчики.переезды.погрузка.разгрузка.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchiki89517632158_5886252">Грузчики.8-951-763-21-58</a>
+				<p class="list_text">
+										Грузчики.переезды.погрузка.разгрузка.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					06:49
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5886252" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5886252"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_pereezdy_gruzchiki_gazel_89517632158_5334758"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Переезды Грузчики Газель 8-951-763-21-58" data-src="https://img02.kupiprodai.ru/082020/1598162098723.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Опытные грузчики.Переезды.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_pereezdy_gruzchiki_gazel_89517632158_5334758">Переезды Грузчики Газель 8-951-763-21-58</a>
+				<p class="list_text">
+										Опытные грузчики.Переезды.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					06:49
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5334758" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5334758"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_uslugi_gazeli_7829200"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Услуги газели." data-src="https://img02.kupiprodai.ru/032023/1678514835526.png" alt=""></a>
+    
+    <div class="list_layout_padd" title="Вывоз мусора. Переезды офисные.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_uslugi_gazeli_7829200">Услуги газели.</a>
+				<p class="list_text">
+										Вывоз мусора. Переезды офисные.
+									</p>
+				<span class="list_price">800 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										Вчера,
+					06:25
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="7829200" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="7829200"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_zapchasti_kardanyy_val_8224040"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Карданый вал" data-src="https://img02.kupiprodai.ru/082023/1692329701100.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Карданый вал, новый, на -УАЗ">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_zapchasti_kardanyy_val_8224040">Карданый вал</a>
+				<p class="list_text">
+															Вид товара: Запчасти;&nbsp;
+										Тип товара: Для автомобилей;&nbsp;
+														</p>
+				<span class="list_price">4 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										9
+					сентября
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="8224040" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="8224040"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/staryyoskol_gruz_gruzoperevozki_po_staromu_oskolu_i_rossii_4792930"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузоперевозки по Старому Осколу и России" data-src="https://img02.kupiprodai.ru/042020/1586114642881.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Грузоперевозки на удлиненной Газели тент длинной 4.20 метра по Старому Осколу,району,области и России.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/staryyoskol_gruz_gruzoperevozki_po_staromu_oskolu_i_rossii_4792930">Грузоперевозки по Старому Осколу и России</a>
+				<p class="list_text">
+										Грузоперевозки на удлиненной Газели тент длинной 4.20 метра по Старому Осколу,району,области и России.
+									</p>
+				<span class="list_price">20 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Старый Оскол</span>
+                <span class="list_data">
+										9
+					сентября
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="4792930" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="4792930"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_polupricep_zernovoz_interpricep_853341_s_vynosnoy_osyu_8080191"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Полуприцеп зерновоз ИнтерПрицеп 853341 с выносной осью" data-src="https://img02.kupiprodai.ru/062023/1686842630232.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Надежная прицепная техника ставропольского завода «ИнтерПрицеп» по цене производителя.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruzoviki_polupricep_zernovoz_interpricep_853341_s_vynosnoy_osyu_8080191">Полуприцеп зерновоз ИнтерПрицеп 853341 с выносной осью</a>
+				<p class="list_text">
+															Вид техники: Прицепы;&nbsp;
+														</p>
+				<span class="list_price">3 990 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										9
+					сентября
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="8080191" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="8080191"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_uslugi_gruzchikov_7039816"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Услуги грузчиков" data-src="https://img02.kupiprodai.ru/062022/1655193279790.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Пeречeнь оказывaeмых услуг : 
+*Квартирные, офисные, складские переезды ; Пианино 
+*Перевозка мебели, домашних вещей...">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_uslugi_gruzchikov_7039816">Услуги грузчиков</a>
+				<p class="list_text">
+										Пeречeнь оказывaeмых услуг : 
+*Квартирные, офисные, складские переезды ; Пианино 
+*Перевозка мебели, домашних вещей...
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										9
+					сентября
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="7039816" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="7039816"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_uslugi_gruzchikov_belgorod_355762"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="услуги грузчиков Белгород" data-src="https://img02.kupiprodai.ru/042016/1500954760205.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Наша компания предоставляет к вашим услугам наших грузчиков.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_uslugi_gruzchikov_belgorod_355762">услуги грузчиков Белгород</a>
+				<p class="list_text">
+										Наша компания предоставляет к вашим услугам наших грузчиков.
+									</p>
+				<span class="list_price">300 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										9
+					сентября
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="355762" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="355762"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/staryyoskol_gruz_gruzoperevozki_po_gorodu_i_mezh_gorodu_4802386"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузоперевозки по городу и меж городу" data-src="https://img02.kupiprodai.ru/042020/1586203816734.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Грузоперевозки на удлиненной Газели тент по городу и меж городу.Газель длинна 4.20,ширина-2,высота-2-17 кубов.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/staryyoskol_gruz_gruzoperevozki_po_gorodu_i_mezh_gorodu_4802386">Грузоперевозки по городу и меж городу</a>
+				<p class="list_text">
+										Грузоперевозки на удлиненной Газели тент по городу и меж городу.Газель длинна 4.20,ширина-2,высота-2-17 кубов.
+									</p>
+				<span class="list_price">500 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Старый Оскол</span>
+                <span class="list_data">
+										9
+					сентября
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="4802386" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="4802386"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikiperevozka_pianinomebeli_89517632158_5327699"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики.Перевозка пианино.Мебели 8-951-763-21-58" data-src="https://img02.kupiprodai.ru/082020/1597929997192.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Услуги опытных грузчиков.переезды">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikiperevozka_pianinomebeli_89517632158_5327699">Грузчики.Перевозка пианино.Мебели 8-951-763-21-58</a>
+				<p class="list_text">
+										Услуги опытных грузчиков.переезды
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										9
+					сентября
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5327699" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5327699"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikipereezdydostavka_89517632158_5333039"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузчики.Переезды.Доставка 8-951-763-21-58" data-src="https://img02.kupiprodai.ru/082020/1598090457997.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Опытные Грузчики.Транспорт.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_gruzchikipereezdydostavka_89517632158_5333039">Грузчики.Переезды.Доставка 8-951-763-21-58</a>
+				<p class="list_text">
+										Опытные Грузчики.Транспорт.
+									</p>
+							</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										9
+					сентября
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="5333039" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="5333039"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/staryyoskol_gruz_gruzoperevozki_pereezdy_4791737"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Грузоперевозки, Переезды" data-src="https://img02.kupiprodai.ru/042020/1586083573480.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Газель удлинённая (Еврофургон 18м3) заказ по Городу, Области, России
+— Экспресс доставка груза
+— Перевозка мебели, бытовой...">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/staryyoskol_gruz_gruzoperevozki_pereezdy_4791737">Грузоперевозки, Переезды</a>
+				<p class="list_text">
+										Газель удлинённая (Еврофургон 18м3) заказ по Городу, Области, России
+— Экспресс доставка груза
+— Перевозка мебели, бытовой...
+									</p>
+				<span class="list_price">350 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Старый Оскол</span>
+                <span class="list_data">
+										8
+					сентября
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="4791737" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="4791737"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_zapchasti_nakladki_na_ruchki_zerkala_Toyota_Nissan_i_dr_837436"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Накладки на ручки, зеркала Toyota, Nissan и др." data-src="https://img02.kupiprodai.ru/112016/1573398601274.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Продам Накладки на ручки, зеркала Toyota, Nissan и др.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_zapchasti_nakladki_na_ruchki_zerkala_Toyota_Nissan_i_dr_837436">Накладки на ручки, зеркала Toyota, Nissan и др.</a>
+				<p class="list_text">
+										Продам Накладки на ручки, зеркала Toyota, Nissan и др.
+									</p>
+				<span class="list_price">1 200 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										8
+					сентября
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="837436" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="837436"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_autoraznoe_chiptyuning_avto_belgorod_3552155"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="ЧИП-ТЮНИНГ АВТО БЕЛГОРОД" data-src="https://img02.kupiprodai.ru/062019/1612078405384.png" alt=""></a>
+    
+    <div class="list_layout_padd" title="ЧИП-ТЮНИНГ В БЕЛГОРОДЕ 
+
+Компания CarChip31 занимается прошивкой электронных блоков управления (ЭБУ) двигателей, с целью...">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_autoraznoe_chiptyuning_avto_belgorod_3552155">ЧИП-ТЮНИНГ АВТО БЕЛГОРОД</a>
+				<p class="list_text">
+										ЧИП-ТЮНИНГ В БЕЛГОРОДЕ 
+
+Компания CarChip31 занимается прошивкой электронных блоков управления (ЭБУ) двигателей, с целью...
+									</p>
+				<span class="list_price">1 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										8
+					сентября
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="3552155" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="3552155"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/staryyoskol_gruz_perevozkipereezdy_na_udlinennoy_gazeli_tent_po_gorodurayonuoblasti_i_rossii_4509245"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Перевозки-Переезды на удлиненной Газели тент по городу,району,области и России" data-src="https://img02.kupiprodai.ru/022020/1582048305607.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Перевозки-переезды на Газели тент, габариты кузова длинна-4.20, высота-2.0, ширина-2.0 метра, 16 кубов.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/staryyoskol_gruz_perevozkipereezdy_na_udlinennoy_gazeli_tent_po_gorodurayonuoblasti_i_rossii_4509245">Перевозки-Переезды на удлиненной Газели тент по городу,району,области и России</a>
+				<p class="list_text">
+										Перевозки-переезды на Газели тент, габариты кузова длинна-4.20, высота-2.0, ширина-2.0 метра, 16 кубов.
+									</p>
+				<span class="list_price">500 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Старый Оскол</span>
+                <span class="list_data">
+										8
+					сентября
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="4509245" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="4509245"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_autoraznoe_prodam_buldozer_SHANTUI_7321576"><img class="list_photo" src="https://kupiprodai.ru/images/nophoto.svg" width="175" height="125" title="продам бульдозер SHANTUI" alt=""></a>
+    
+    <div class="list_layout_padd" title="продам бульдозер SHANTUI 2007 г.в. в рабочем состоянии">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_autoraznoe_prodam_buldozer_SHANTUI_7321576">продам бульдозер SHANTUI</a>
+				<p class="list_text">
+										продам бульдозер SHANTUI 2007 г.в. в рабочем состоянии
+									</p>
+				<span class="list_price">1 600 000 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										8
+					сентября
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="7321576" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="7321576"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+		<li>
+        <a target="_blank" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_pereezd_iz_belgoroda_po_rf_gruzoperevozki_7281536"><img class="list_photo lazy" src="https://kupiprodai.ru/images/0.gif" width="175" height="125" title="Переезд из Белгорода по РФ. Грузоперевозки" data-src="https://img02.kupiprodai.ru/102022/1665052277866.jpg" alt=""></a>
+    
+    <div class="list_layout_padd" title="Переезжать легко! Сэкономьте 15-50% с оплатой в 1 сторону. Бесплатное время погрузки. Полная сохранность груза.">
+        <div class="list_info">
+			<div class="list_info_top">
+				<a target="_blank" class="list_title" href="https://bel.kupiprodai.ru/auto/belgorod_gruz_pereezd_iz_belgoroda_po_rf_gruzoperevozki_7281536">Переезд из Белгорода по РФ. Грузоперевозки</a>
+				<p class="list_text">
+										Переезжать легко! Сэкономьте 15-50% с оплатой в 1 сторону. Бесплатное время погрузки. Полная сохранность груза.
+									</p>
+				<span class="list_price">5 &#8381;</span>			</div>
+            <div>
+                <span class="list_city">Белгород</span>
+                <span class="list_data">
+										8
+					сентября
+									</span>
+            </div>
+        </div>
+
+        <div data-bbs_id="7281536" class="favorite favorite_popover"></div>
+                <div class="favorite"><a class="favorite_add" title="Добавить в избранное" href="#" data-bbs_id="7281536"><img src="https://kupiprodai.ru/images/heart_off.svg" width="24" height="21" alt=""></a></div>
+        
+        
+            </div>
+</li>
+</ul>
+													
+						
+										
+																					<div class="width100 pages margin_bottom_25">
+																											<span class="act_page">1</span>
+																																				<a href="https://bel.kupiprodai.ru/auto/page2/" title="Страница 2">2</a>
+																																				<a href="https://bel.kupiprodai.ru/auto/page3/" title="Страница 3">3</a>
+																																				<a href="https://bel.kupiprodai.ru/auto/page4/" title="Страница 4">4</a>
+																																				<a href="https://bel.kupiprodai.ru/auto/page5/" title="Страница 5">5</a>
+																																				<a href="https://bel.kupiprodai.ru/auto/page6/" title="Страница 6">6</a>
+																																				<a href="https://bel.kupiprodai.ru/auto/page7/" title="Страница 7">7</a>
+																																				<a href="https://bel.kupiprodai.ru/auto/page8/" title="Страница 8">8</a>
+																																				<a href="https://bel.kupiprodai.ru/auto/page9/" title="Страница 9">9</a>
+																																				<a href="https://bel.kupiprodai.ru/auto/page10/" title="Страница 10">10</a>
+																		
+									<a id='next_page' class="next_page" href="https://bel.kupiprodai.ru/auto/page2/">следующая</a>								</div>
+
+																	<a id="show_more" data-curr_page="1" class="width100 show_more block margin_bottom_50 box-sizing" href="https://bel.kupiprodai.ru/auto/page2/">Показать ещё</a>
+																			
+						
+						
+					</div>
+				</div>	
+			</div>
+        </div>
+	</div>
+</div>
+
+<div class="width100 footer">
+	<div class="center1200 box-sizing">
+		<div class="footer_menu width100 box-sizing">
+        	<div class="footer_padd">
+            	<a href="https://bel.kupiprodai.ru/">Доска объявлений Белгородская область</a>
+                <a href="https://vip.kupiprodai.ru/register/">Подать объявление</a>
+                <a href="https://kupiprodai.ru/login/">Личный кабинет</a>
+				<a href="https://kupiprodai.ru/all">Все сервисы</a> 
+				<a href="https://bel.kupiprodai.ru/shops">Магазины</a>
+                <a href="https://vip.kupiprodai.ru/info/terms/">Правила</a>
+                <a href="https://bel.kupiprodai.ru/contact/">Контакты</a>
+				<a href="https://bel.kupiprodai.ru/mobile/1/">Мобильная версия</a>
+            </div>
+        </div>
+        <div class="footer_info width100 box-sizing">
+			<div class="app">
+				<a class="android" target="_blank" title="Google Play Маркет" href="https://play.google.com/store/apps/details?id=ru.kupiprodai.androidmobile"></a>
+				<a class="ios" target="_blank" title="App Store" href="https://itunes.apple.com/ru/app/id1370428314"></a>
+			</div>
+			Доска бесплатных объявлений Белгородская область © КупиПродай. Здесь можно Купить или Продать не прогадать!<br />
+			<img class="phone_city" src="https://kupiprodai.ru/images/phone_footer.svg" width="9" height="10" alt="" title="" /> 8 (800) 550-95-80 (отдел по работе с клиентами, с 10:00 до 19:00)        </div>
+	</div>
+</div>
+
+
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(24267385, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/24267385" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49658144-1', 'kupiprodai.ru');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+<link rel="stylesheet" href="https://kupiprodai.ru/styles/jquery.webui-popover.css?12092023" type="text/css" />
+<script src="https://kupiprodai.ru/js/favorite.js?12092023"></script>
+<script src="https://kupiprodai.ru/js/jquery.cookie.js?12092023"></script>
+<script src="https://kupiprodai.ru/js/jquery.webui-popover.js?12092023"></script>
+<script src="https://vip.kupiprodai.ru/js/cat_show_more.js?12092023"></script>
+<script src="https://kupiprodai.ru/js/msgs.js?12092023"></script>
+<script>
+	scrollClickPause = false;
+	loadCount = 1;
+	$(function() {
+		$(window).scroll(function() {
+			if (!scrollClickPause && $('#show_more').length) {
+				var windowHeight = $(window).height();
+				var self = $('#show_more');
+				var height = self.offset().top + self.height();
+				var diff = 200;
+				if ($(document).scrollTop() + windowHeight >= height - diff && loadCount <= 5) {
+					scrollClickPause = true;
+					self.click();
+					loadCount++;
+				}
+			}
+		});
+	});
+</script>
+<script>
+	$(function() {
+		
+		$('.favorite_popover').webuiPopover({placement: "top-right",title: " ", content:"Добавлено в <a href='"+site+"/favorite/'>избранное</a>", autoHide:3000, trigger:'manual'});
+		$('.bbslike_popover').webuiPopover({placement: "top-right",title: " ", content:"Ваша реклама включена в этом объявление. <a href='"+vip_site+"/more/free/"+bbslike_id+"/page1/'>Весь список</a>", autoHide:3000, trigger:'manual'});
+		
+		});
+</script>
+</body>
+</html>
