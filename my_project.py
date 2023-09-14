@@ -40,7 +40,42 @@ def product_number():
                     print (resultat.text)
     except(requests.RequestException, ValueError):
         return "Сетевая ошибка"
-             
+
+def info_product():
+    text_product = product_number()
+    soup_info = BeautifulSoup(text_product, "html.parser")
+    all_info_product = soup_info.find_all("div", class_= "msg_title width100")
+    all_info_prod = soup_info.find_all("div", class_= "msg_data_info")
+    all_info_price = soup_info.find_all("div", class_= "msg_price width100")
+    all_address_product = soup_info.find_all("div", class_= "msg_info width100 margin_bottom_50")
+    all_product = []
+    for product_list_info in all_info_product:
+        title_product = product_list_info.find("h1").text
+        all_product.append({
+            "title":title_product
+            })  
+    for prod_list_info in all_info_prod:
+        __product = prod_list_info.text.strip(' \n\t')
+        sale = __product.split(",")[0]
+        sale_info = __product.split(",")[1].replace('\t',"").replace( "\n", " ")
+        all_product.append({
+            "№ sale":sale
+            })
+        all_product.append({
+            "sale_info":sale_info
+        })             
+    for product_price_info in all_info_price:
+        price_product = product_price_info.text
+        all_product.append({
+            "price":price_product
+            })  
+    for product_address_info in all_address_product:
+        address_product = product_address_info.select("p")[1].text.replace('\t',"")
+        all_product.append({
+            "Address":address_product
+            })  
+    return all_product
+     
              
 if __name__ =="__main__":
     print(get_product())
