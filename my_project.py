@@ -23,7 +23,7 @@ def get_product():
         for all_product_list in all_product:
             url = all_product_list.find("a")["href"]
             result_product.append(url)
-        return print(result_product)
+        return result_product
     return False    
         
 def product_number():
@@ -37,7 +37,8 @@ def product_number():
             stat_code = resultat.status_code
             for i in range(200, 206):
                 if i == stat_code:
-                    print (resultat.text)
+                    True
+            return resultat.text
     except(requests.RequestException, ValueError):
         return "Сетевая ошибка"
 
@@ -48,6 +49,7 @@ def info_product():
     all_info_prod = soup_info.find_all("div", class_= "msg_data_info")
     all_info_price = soup_info.find_all("div", class_= "msg_price width100")
     all_address_product = soup_info.find_all("div", class_= "msg_info width100 margin_bottom_50")
+    all_text_product = soup_info.find_all("div", class_= "msg_text width100 box-sizing margin_bottom_50")
     all_product = []
     for product_list_info in all_info_product:
         title_product = product_list_info.find("h1").text
@@ -74,9 +76,14 @@ def info_product():
         all_product.append({
             "Address":address_product
             })  
+    for product_text_info in all_text_product:
+        text_product = product_text_info.find("p").text
+        all_product.append({
+            "text_sale":text_product
+            })          
     return all_product
      
              
 if __name__ =="__main__":
-    print(get_product())
+    print(product_number())
  
